@@ -1,0 +1,39 @@
+<image src="../../images/timg.jpg" class="bg"></image>
+<view class="container">
+<view class="nowWeather">
+<view class="temp w center">{{tmp}}℃</view>
+<view class="location">
+<view class="city w center">{{city}} </view>
+<view class="city w center">{{district}} </view>
+<view class="city w center">{{street}}</view>
+</view>
+<view class="temp w center">{{txt}}</view>
+</view>
+<view class="pm25 b w center">空气:{{qlty}}---PM2.5指数：{{pm25}}</view>
+<view class="weahterDetail">
+<view class="">
+<view class="w center">{{dir}}</view>
+<view wx:if="{{sc == '微风'}}" class="w b center f50">微风</view>
+<view wx:else class="w b center f50">{{sc}}级</view>
+</view>
+<view class="l"></view>
+<view class="">
+<view class="w center">相对湿度</view>
+<view class="w b center f50">{{hum}}%</view>
+</view>
+<view class="l"></view>
+<view class="">
+<view class="w center">体感温度</view>
+<view class="w b center f50">{{fl}}°</view>
+</view>
+</view>
+<view wx:for="{{daily_forecast}}" wx:for-index="i" wx:for-item="item">
+<view class="hor forcast b">
+<view class="center">{{day[i]}}</view>
+<view class="hor">
+<view class="center">{{item.cond_txt_d}}|{{item.wind_dir}}</view>
+</view>
+<view class="center">{{item.tmp_min}}°/ {{item.tmp_max}}°</view>
+</view>
+</view>
+</view>
